@@ -6,7 +6,7 @@ public class LongestSentanceAnswer
 {
     public static int Solution(string s)
     {
-        var sentenceLenght = 0;
+        var wordCount = 0;
 
         //split string sentences based on dot
 
@@ -19,11 +19,13 @@ public class LongestSentanceAnswer
             sentences[i] = sentences[i].Replace("?", String.Empty).Replace("!", String.Empty);
 
             //split each sentence by spaces to get word count
+
+            var words = sentences[i].Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+            //Determine sentence with highest word count
         }
 
-        //Determine sentence with highest word count
-
-        return sentenceLenght;
+        return wordCount;
     }
 }
 
