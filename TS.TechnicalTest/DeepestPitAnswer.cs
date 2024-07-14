@@ -56,12 +56,22 @@ public class DeepestPitAnswer
             //In the problem statement rightIndex is referenced as R
             while (rightIndex < pointsCount - 1 && points[rightIndex] < points[rightIndex + 1])
                 rightIndex++;
+
+            //Check if a ridge was found
+            //Calculate pit depth
+            if (points[leftIndex] > 0 && points[rockBottomIndex] < points[leftIndex] && points[rockBottomIndex] < points[rightIndex])
+            {
+                int depth = Math.Min(points[leftIndex] - points[rockBottomIndex], points[rightIndex] - points[rockBottomIndex]);
+                deepestPitDepth = Math.Max(deepestPitDepth, depth);
+            }
+
+            // Move P to R and continue
+            leftIndex = rightIndex;
         }
 
         
 
         //Check if a ridge was found
-
         //Calculate pit depth
 
         return deepestPitDepth;
