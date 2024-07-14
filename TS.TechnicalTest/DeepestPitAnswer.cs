@@ -42,9 +42,14 @@ public class DeepestPitAnswer
             //In the problem statement rockBottomIndex is referenced as Q
             while (rockBottomIndex < pointsCount - 1 && points[rockBottomIndex] > points[rockBottomIndex + 1])
                 rockBottomIndex++;
-        }
 
-        //Check if a bit bottom was found
+            //Check if a bit bottom was found
+            if (rockBottomIndex == leftIndex + 1 || rockBottomIndex == pointsCount - 1)
+            {
+                leftIndex = rockBottomIndex;
+                continue;
+            }
+        }
 
         //Assume the top of the pit as pit bottom, check the next point for an increase in slope,
         //With each successful check a new ridge should be tagged
