@@ -69,11 +69,6 @@ public class DeepestPitAnswer
             leftIndex = rightIndex;
         }
 
-        
-
-        //Check if a ridge was found
-        //Calculate pit depth
-
         return deepestPitDepth;
 
     }
