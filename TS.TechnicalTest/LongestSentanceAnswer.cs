@@ -10,7 +10,7 @@ public class LongestSentanceAnswer
 
         //split string sentences based on dot
 
-        var sentences = s.Split('.', StringSplitOptions.RemoveEmptyEntries);
+        var sentences = s.Split('.', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
 
         for (int i = 0; i < sentences.Length; i++)
         {
@@ -20,7 +20,7 @@ public class LongestSentanceAnswer
 
             //split each sentence by spaces to get word count
 
-            var words = sentences[i].Split(' ', StringSplitOptions.RemoveEmptyEntries);
+            var words = sentences[i].Split(' ', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
 
             //Determine sentence with highest word count
 
@@ -29,10 +29,4 @@ public class LongestSentanceAnswer
 
         return wordCount;
     }
-}
-
-public class Sentence
-{
-    public string FullText { get; set; }
-    public int WordCount { get; set; }
 }
