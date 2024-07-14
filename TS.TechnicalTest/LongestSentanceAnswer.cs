@@ -1,4 +1,5 @@
-﻿
+﻿using System.Linq;
+
 namespace TS.TechnicalTest;
 
 public class LongestSentanceAnswer
@@ -9,6 +10,8 @@ public class LongestSentanceAnswer
 
         //split string sentences based on dot
 
+        var sentences = s.Split('.', StringSplitOptions.RemoveEmptyEntries);
+
         //Strip each sentence of punctuation marks
 
         //split each sentence by spaces to get word count
@@ -17,4 +20,10 @@ public class LongestSentanceAnswer
 
         return sentenceLenght;
     }
+}
+
+public class Sentence
+{
+    public string FullText { get; set; }
+    public int WordCount { get; set; }
 }
