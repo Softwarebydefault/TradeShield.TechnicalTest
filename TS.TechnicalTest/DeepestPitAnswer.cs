@@ -23,11 +23,21 @@ public class DeepestPitAnswer
 */
     public static int Solution(int[] points)
     {
+        var pointsCount = points.Length;
         var deepestPitDepth = -1;
 
+        int leftIndex = 0;
         //Iterate through points
+        //In the problem statement leftIndex is referenced as P
+        while (leftIndex < pointsCount - 2)
+        {
+            //Skip negative points
+            // Find the start of the pit (P)
+            while (leftIndex < pointsCount - 1 && points[leftIndex] <= 0)
+                leftIndex++;
+        }
 
-        //Skip negative points
+        
 
         //Assume a pit bottom and check if the next point has a decrease in slope, continue checking, 
         //with each successful check a new pit bottom should be tagged
