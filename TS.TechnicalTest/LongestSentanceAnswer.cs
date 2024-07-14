@@ -12,9 +12,14 @@ public class LongestSentanceAnswer
 
         var sentences = s.Split('.', StringSplitOptions.RemoveEmptyEntries);
 
-        //Strip each sentence of punctuation marks
+        for (int i = 0; i < sentences.Length; i++)
+        {
+            //Strip each sentence of punctuation marks
 
-        //split each sentence by spaces to get word count
+            sentences[i] = sentences[i].Replace("?", String.Empty).Replace("!", String.Empty);
+
+            //split each sentence by spaces to get word count
+        }
 
         //Determine sentence with highest word count
 
