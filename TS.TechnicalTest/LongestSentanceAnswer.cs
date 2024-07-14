@@ -23,6 +23,8 @@ public class LongestSentanceAnswer
             var words = sentences[i].Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
             //Determine sentence with highest word count
+
+            wordCount = Math.Max(wordCount, words.Length);
         }
 
         return wordCount;
