@@ -49,10 +49,16 @@ public class DeepestPitAnswer
                 leftIndex = rockBottomIndex;
                 continue;
             }
+
+            int rightIndex = rockBottomIndex + 1;
+            //Assume the top of the pit as pit bottom, check the next point for an increase in slope,
+            //With each successful check a new ridge should be tagged
+            //In the problem statement rightIndex is referenced as R
+            while (rightIndex < pointsCount - 1 && points[rightIndex] < points[rightIndex + 1])
+                rightIndex++;
         }
 
-        //Assume the top of the pit as pit bottom, check the next point for an increase in slope,
-        //With each successful check a new ridge should be tagged
+        
 
         //Check if a ridge was found
 
