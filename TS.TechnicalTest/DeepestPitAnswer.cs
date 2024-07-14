@@ -35,12 +35,14 @@ public class DeepestPitAnswer
             // Find the start of the pit (P)
             while (leftIndex < pointsCount - 1 && points[leftIndex] <= 0)
                 leftIndex++;
+
+            int rockBottomIndex = leftIndex + 1;
+            //Assume a pit bottom and check if the next point has a decrease in slope, continue checking, 
+            //with each successful check a new pit bottom should be tagged
+            //In the problem statement rockBottomIndex is referenced as Q
+            while (rockBottomIndex < pointsCount - 1 && points[rockBottomIndex] > points[rockBottomIndex + 1])
+                rockBottomIndex++;
         }
-
-        
-
-        //Assume a pit bottom and check if the next point has a decrease in slope, continue checking, 
-        //with each successful check a new pit bottom should be tagged
 
         //Check if a bit bottom was found
 
